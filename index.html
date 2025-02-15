@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>あいす</title>
+    <style>
+        /* 全体のリセット */
+        body, h1, p, button {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ナビゲーションバー */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 25px 0; /* バーの高さ調整 */
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar li {
+            margin: 0 30px; /* リンクの間隔 */
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .navbar a:hover {
+            color: #5865F2;
+        }
+
+        /* 背景パーティクル */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* パーティクルアニメーション */
+        .particle-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+            pointer-events: none;
+            animation: particleAnimation 5s infinite linear;
+        }
+
+        @keyframes particleAnimation {
+            0% { background-color: rgba(0, 0, 0, 0.3); }
+            50% { background-color: rgba(0, 0, 0, 0.7); }
+            100% { background-color: rgba(0, 0, 0, 0.3); }
+        }
+
+        /* ヘッダーセクション */
+        .hero {
+            padding: 100px 20px 80px 20px; /* 上部余白調整 */
+            background-color: rgba(43, 43, 43, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            margin-top: 50px; /* ナビゲーションバーとの隙間 */
+        }
+
+        h1 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        /* ボタンのデザイン */
+        .join-btn {
+            padding: 14px 30px;
+            background-color: #5865F2;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .join-btn:hover {
+            background-color: #4852c4;
+            transform: scale(1.05);
+        }
+
+        /* フィーチャーセクション */
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 50px;
+            flex-wrap: wrap;
+            margin: 0;
+            background-color: transparent;
+        }
+
+        .feature {
+            background-color: rgba(51, 51, 51, 0.8);
+            padding: 25px;
+            border-radius: 15px;
+            width: 300px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature h3 {
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .feature p {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* 絵文字スタイル */
+        .feature .emoji {
+            font-size: 2rem;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <!-- ナビゲーションバー -->
+    <div class="navbar">
+        <ul>
+            <li><a href="#">ホーム</a></li>
+            <li><a href="#">特徴</a></li>
+            <li><a href="https://discord.gg/S9gSsgAXpP ">参加する</a></li>
+            <li><a href="https://discord.com/channels/1309463646623240242/1310106720005263471">お問い合わせ</a></li>
+        </ul>
+    </div>
+
+    <!-- パーティクル背景 -->
+    <div class="particle-background"></div>
+
+    <!-- ヘッダーセクション -->
+    <div class="hero">
+        <h1>ようこそ！あいすへ</h1>
+        <p>すごくゆる～い鯖(?)</p>
+        <button class="join-btn" onclick="joinServer()">今すぐ参加</button>
+    </div>
+    
+    <!-- フィーチャーセクション -->
+    <div class="features">
+        <div class="feature">
+            <h3><span class="emoji">🔒</span>安心のセキュリティ</h3>
+            <p>荒らし対策ばっちり！安心して活動できます。</p>
+        </div>
+        <div class="feature">
+            <h3><span class="emoji">📈</span>レベルアップシステム</h3>
+            <p>チャットでの活動によりレベルアップ！特別な権限を手に入れるチャンス。</p>
+        </div>
+        <div class="feature">
+            <h3><span class="emoji">💻</span>プログラミングサポート</h3>
+            <p>プログラマーが集まっており、分からないことを気軽に聞ける環境です。</p>
+        </div>
+    </div>
+
+    <script>
+        function joinServer() {
+            window.location.href = 'https://discord.gg/S9gSsgAXpP';
+        }
+    </script>
+</body>
+</html>
